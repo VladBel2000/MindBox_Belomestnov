@@ -1,0 +1,5 @@
+select NameProd, NameCat
+from ProdCat
+left join Cat on ProdCat.IDCat = Cat.ID
+inner join Prod on ProdCat.IDProd = Prod.ID
+order by Prod.NameProd
