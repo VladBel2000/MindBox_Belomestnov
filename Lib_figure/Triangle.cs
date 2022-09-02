@@ -49,17 +49,16 @@ namespace Lib_figure
             }
         }
 
-        // Нахождение площади
+        // Find Area
         public override double Get_Area()
         {
             double Area = 0;
-            // Формула Герона
+            // Geron
             double Part_Perimeter = (A + B + C) / 2;
             Area = Sqrt(Part_Perimeter * (Part_Perimeter - A) * (Part_Perimeter - B) * (Part_Perimeter - C));
             return (Area);
         }
 
-        // Проверка треугольника на прямоугольный
         public bool Check_Right_Triangle()
         {
             bool Result = false;

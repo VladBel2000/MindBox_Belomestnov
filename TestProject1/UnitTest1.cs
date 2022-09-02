@@ -9,7 +9,6 @@ namespace TestProject1
     public class UnitTest_Figure
     {
         [TestMethod]
-        // Вычисление площади окружности 1
         public void GetAreaCirlce()
         {
             //Arrange
@@ -21,8 +20,8 @@ namespace TestProject1
             //Assert
             Assert.AreEqual(expectedArea, area);
         }
+
         [TestMethod]
-        // Вычисление площади окружности 2
         public void GetAreaCir()
         {
             //Arrange
@@ -34,8 +33,8 @@ namespace TestProject1
             //Assert
             Assert.AreEqual(expectedArea, area);
         }
+
         [TestMethod]
-        // Создание треугольника, которого не может существовать
         public void CreateTriangleBad()
         {
             //Arrange
@@ -55,7 +54,6 @@ namespace TestProject1
         }
 
         [TestMethod]
-        // Вычисление площади треугольника
         public void GetAreaTriangle()
         {
             //Arrange
@@ -71,7 +69,6 @@ namespace TestProject1
         }
 
         [TestMethod]
-        // Проверка треугольника на прямоугольность
         public void Check_Right_Triangle()
         {
             //Arrange
