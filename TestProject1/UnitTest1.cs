@@ -1,15 +1,15 @@
-п»їusing Microsoft.VisualStudio.TestTools.UnitTesting;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using Lib_figure;
 using static System.Math;
 
-namespace UnitTestProject
+namespace TestProject1
 {
     [TestClass]
     public class UnitTest_Figure
     {
         [TestMethod]
-        // Р’С‹С‡РёСЃР»РµРЅРёРµ РїР»РѕС‰Р°РґРё РѕРєСЂСѓР¶РЅРѕСЃС‚Рё
+        // Вычисление площади окружности 1
         public void GetAreaCirlce()
         {
             //Arrange
@@ -17,13 +17,25 @@ namespace UnitTestProject
             Circle circle = new Circle(radius);
             double expectedArea = PI * Pow(radius, 2);
             //Act
-            double area = circle.Area();
+            double area = circle.Get_Area();
             //Assert
             Assert.AreEqual(expectedArea, area);
         }
-
         [TestMethod]
-        // РЎРѕР·РґР°РЅРёРµ С‚СЂРµСѓРіРѕР»СЊРЅРёРєР°, РєРѕС‚РѕСЂРѕРіРѕ РЅРµ РјРѕР¶РµС‚ СЃСѓС‰РµСЃС‚РІРѕРІР°С‚СЊ
+        // Вычисление площади окружности 2
+        public void GetAreaCir()
+        {
+            //Arrange
+            double radius = 10.0;
+            Circle circle = new Circle(radius);
+            double expectedArea = PI * Pow(radius, 2);
+            //Act
+            double area = circle.Get_Area();
+            //Assert
+            Assert.AreEqual(expectedArea, area);
+        }
+        [TestMethod]
+        // Создание треугольника, которого не может существовать
         public void CreateTriangleBad()
         {
             //Arrange
@@ -43,7 +55,7 @@ namespace UnitTestProject
         }
 
         [TestMethod]
-        // Р’С‹С‡РёСЃР»РµРЅРёРµ РїР»РѕС‰Р°РґРё С‚СЂРµСѓРіРѕР»СЊРЅРёРєР°
+        // Вычисление площади треугольника
         public void GetAreaTriangle()
         {
             //Arrange
@@ -53,13 +65,13 @@ namespace UnitTestProject
             Triangle triangle = new Triangle(a, b, c);
 
             //Act
-            double area = triangle.Area();
+            double area = triangle.Get_Area();
             //Assert
             Assert.IsTrue(area <= 95.0 && area > 94.99);
         }
 
         [TestMethod]
-        // РџСЂРѕРІРµСЂРєР° С‚СЂРµСѓРіРѕР»СЊРЅРёРєР° РЅР° РїСЂСЏРјРѕСѓРіРѕР»СЊРЅРѕСЃС‚СЊ
+        // Проверка треугольника на прямоугольность
         public void Check_Right_Triangle()
         {
             //Arrange
@@ -74,3 +86,4 @@ namespace UnitTestProject
         }
     }
 }
+
